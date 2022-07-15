@@ -4,7 +4,13 @@
 # Principio de responsabilidad única (SRP)
 
 ## Pregunta 1
-### Muestra la salida y explica los resultados en función de los métodos entregados
+<!--# ### Muestra la salida y explica los resultados en función de los métodos entregados-->
+- **Muestra la salida y explica los resultados en función de los métodos entregados**
+	- displayEmpDetail() ❤️
+	- generateEmpId()
+	- checkSeniority()
+
+
 
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta1.png">
 
@@ -19,5 +25,5 @@ Para mejorar la legibilidad del código y evitar torpezas dentro del método mai
 ### Realiza una demostración completa que sigue a SRP. Explica tus resultados
 
 
-
-# Principio abierto/cerrado 
+<!--# OCP-->
+# Principio abierto/cerrado (OCP)
