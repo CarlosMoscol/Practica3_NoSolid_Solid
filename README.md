@@ -13,9 +13,8 @@
 	- El método checkSeniority() evalúa si un empleado es una persona mayor. Se establece que si el empleado tiene más de 5 años de experiencia, es un empleado senior; de lo contrario, es un empleado Junior.
 	Para el primer empleado es Senior y el segundo empleado es Junior.
 
-
-
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta1.png">
+
 
 ## Pregunta 2
 - **¿Cuál es el problema con este diseño y las razones posibles del problema?**
@@ -27,6 +26,7 @@ Aquí hay algunos posibles razones:
 👋 En un futuro se puede establecer un criterio diferente para decidir si un empleado es Senior o Junior e inclusive se podria agregar otra categoria como Master, por parte de la empresa.
 
 👋 También se pueden el modificar el algoritmo para generar la identificación del empleado.
+
 
 ## Pregunta 3
 - **Modifica la clase Empleado. Agrega dos clases SeniorityChecker que contiene el método checkSeniority() y la clase GeneradorIDEmpleado contiene el método generateEmpId(...) para generar la identificación del empleado. 
@@ -106,10 +106,12 @@ public class Cliente {
 ```
 
 
-
-
 ## Pregunta 4
 - **Realiza una demostración completa que sigue a SRP. Explica tus resultados**
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta4.png">
+
+
+
 
 
 <!--# OCP-->
