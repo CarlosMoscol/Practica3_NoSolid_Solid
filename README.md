@@ -31,7 +31,83 @@ Aquí hay algunos posibles razones:
 ## Pregunta 3
 - **Modifica la clase Empleado. Agrega dos clases SeniorityChecker que contiene el método checkSeniority() y la clase GeneradorIDEmpleado contiene el método generateEmpId(...) para generar la identificación del empleado. 
 Para mejorar la legibilidad del código y evitar torpezas dentro del método main(), utiliza el método estático showEmpDetail(...). Este método llama al método displayEmpDetail() de Empleado, al método generateEmpId() de GeneradorIDEmpleado y al método checkSeniority() de SeniorityChecker. Tú entiendes que este método no era necesario, pero hace que el código del cliente sea simple y fácilmente comprensible.**
- 
+
+ Agregamos la clase SeniorityChecker con el metodo checkSeniority
+```java
+public class SeniorityChecker {
+    public String checkSeniority(double experienceInYears){
+        return experienceInYears > 5 ?"senior":"junior";
+    }
+}
+```
+
+ Agregamos la clase GeneradorIDEmpleado con el metodo generateEmpId()
+```java
+import java.util.Random;
+
+public class GeneradorIDEmpleado {
+    String empId;
+    public String generateEmpId(String empFirstName) {
+        int random = new Random().nextInt(1000);
+        empId = empFirstName.substring(0, 1) + random;
+        return empId;
+    }
+}
+```
+
+Tenemos la clase Empleado
+```java
+public class Empleado {
+    public String firstName, lastName, empId;
+    public double experienceInYears;
+    public Empleado(String firstName, String lastName, double experience) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.experienceInYears = experience;
+    }
+    public void displayEmpDetail(){
+        System.out.println("Nombre del empleado: "+lastName+","+firstName);
+        System.out.println("Este empleado tiene "+ experienceInYears+" años de experiencia.");
+    }
+}
+```
+
+En el método main() de Cliente, se utiliza el método estático showEmpDetail(...). Este método llama al método displayEmpDetail() de Empleado, al método generateEmpId() de GeneradorIDempleado y al método checkSeniority() de SeniorityChecker.
+
+```java
+public class Cliente {
+    public static void main(String[] args) {
+        System.out.println("Demostracion de SRP");
+
+        Empleado jessica = new Empleado("Jessica", "Abejita", 7.5);
+        showEmpDetail(jessica);
+
+        System.out.println("\n*******\n");
+
+        Empleado chalo = new Empleado ("Chalito", "Smart", 3.2);
+        showEmpDetail(chalo);
+
+    }
+
+    private static void showEmpDetail(Empleado emp) {
+        // Muestra detalles del empleado
+        emp.displayEmpDetail();
+
+        //Genera el ID
+        GeneradorIDEmpleado idGenerador = new GeneradorIDEmpleado();
+        String empId=idGenerador.generateEmpId(emp.firstName);
+        System.out.println("El ID del empleado es: " + empId);
+
+        // Verifica el nivel laboral
+        SeniorityChecker seniorityChecker = new SeniorityChecker();
+        System.out.println("Este empleado es un" + " empleado " + seniorityChecker.checkSeniority(emp.experienceInYears));
+    }
+}
+```
+
+
+
+
 ## Pregunta 4
 - **Realiza una demostración completa que sigue a SRP. Explica tus resultados**
 
@@ -51,8 +127,6 @@ class Estudiante {
 	} 
 	// … 
 } 
-
-}
 ```
 
 ## Pregunta 6
