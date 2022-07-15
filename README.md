@@ -20,6 +20,14 @@
 ## Pregunta 2
 - **¿Cuál es el problema con este diseño y las razones posibles del problema?**
 
+El problema es que no se esta cumpliendo con el SRP aquí. Al mostrar los detalles de un empleado, generar una identificación de empleado o verificar un nivel de antigüedad son actividades diferentes. Dado que se codifico todo en una sola clase, es posible que tenga problemas para adoptar nuevos cambios en el futuro.
+
+Aquí hay algunos posibles razones:
+
+👋 En un futuro se puede establecer un criterio diferente para decidir si un empleado es Senior o Junior e inclusive se podria agregar otra categoria como Master, por parte de la empresa.
+
+👋 También se pueden el modificar el algoritmo para generar la identificación del empleado.
+
 ## Pregunta 3
 - **Modifica la clase Empleado. Agrega dos clases SeniorityChecker que contiene el método checkSeniority() y la clase GeneradorIDEmpleado contiene el método generateEmpId(...) para generar la identificación del empleado. 
 Para mejorar la legibilidad del código y evitar torpezas dentro del método main(), utiliza el método estático showEmpDetail(...). Este método llama al método displayEmpDetail() de Empleado, al método generateEmpId() de GeneradorIDEmpleado y al método checkSeniority() de SeniorityChecker. Tú entiendes que este método no era necesario, pero hace que el código del cliente sea simple y fácilmente comprensible.**
