@@ -5,9 +5,13 @@
 ## Pregunta 1
 <!--# ### Muestra la salida y explica los resultados en función de los métodos entregados-->
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
-	- displayEmpDetail() ❤️
-	- generateEmpId()
-	- checkSeniority()
+	- El método displayEmpDetail() nos muestra para el primer empleado su lastName abejita seguido de su fristName Jessica, para el segundo empleado su lastName es Smart seguido de su fristName Chalito. ❤️
+	
+	- El método generateEmpId() concatena la primera palabra del firstName con un número aleatorio (Los 1000 primeros) para formar una identificación del empleado. En la ejecución, dentro del método main() (el código del cliente) se crea dos instancias de Empleado y se usa estos métodos para mostrar los detalles relevantes.
+	Para el primer empleado obtenemos el ID J950 y para el segundo empleado el ID C147.
+	
+	- El método checkSeniority() evalúa si un empleado es una persona mayor. Se establece que si el empleado tiene más de 5 años de experiencia, es un empleado senior; de lo contrario, es un empleado Junior.
+	Para el primer empleado es Senior y el segundo empleado es Junior.
 
 
 
