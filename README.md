@@ -76,7 +76,7 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 ## Pregunta 11
 - **¿Cuáles son las principales ventajas ahora?**
 
-
+<!--# LSP-->
 # Principio de sustitución de Liskov (LSP)
 ## Pregunta 12
 
@@ -91,6 +91,7 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 ## Pregunta 17
 
 
+<!--# ISP-->
 # Principio de segregación de interfaz (ISP)
 ## Pregunta 18
 
@@ -118,6 +119,8 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 
 ## Pregunta 30
 
+
+<!--# DIP-->
 # Principio de inversión de dependencia (DIP)
 ## Pregunta 31
 
