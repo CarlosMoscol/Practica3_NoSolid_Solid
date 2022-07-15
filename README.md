@@ -63,3 +63,59 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 
 ## Pregunta 11
 - **¿Cuáles son las principales ventajas ahora?**
+
+
+# Principio de sustitución de Liskov (LSP)
+## Pregunta 12
+
+## Pregunta 13
+
+## Pregunta 14
+
+## Pregunta 15
+
+## Pregunta 16
+
+## Pregunta 17
+
+
+# Principio de segregación de interfaz (ISP)
+## Pregunta 18
+
+## Pregunta 19
+
+## Pregunta 20
+
+## Pregunta 21
+
+## Pregunta 22
+
+## Pregunta 23
+
+## Pregunta 24
+
+## Pregunta 25
+
+## Pregunta 26
+
+## Pregunta 27
+
+## Pregunta 28
+
+## Pregunta 29
+
+## Pregunta 30
+
+# Principio de inversión de dependencia (DIP)
+## Pregunta 31
+
+## Pregunta 32
+
+## Pregunta 33
+
+## Pregunta 34
+
+## Pregunta 35
+
+## Pregunta 36
+
