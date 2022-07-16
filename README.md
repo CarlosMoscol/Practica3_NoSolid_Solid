@@ -291,13 +291,20 @@ interface NewPayment {
 
 ## Pregunta 17
 - **¿Cuáles son los cambios clave?**
-
+  - RPTA:
+  - En el primer caso (NoSolid) los métodos showPreviousPayments() y processNewPayments() usaban solo 1 interfaz para 
+  el bucle for, sin embargo, en el segundo caso (Solid) se usan dos interfaces, uno para cada método.
+  Para el primer método (showPreviousPayments()) se utiliza la interfaz PreviousPayment la cual contiene al método 
+  previousPaymentInfo(). Para el segundo caso se utilizó la interfaz NewPayment que tiene al método newPayment(), es 
+  así que se soluciona el problema la excepción vista en la pregunta 14; ahora sí se respeta el principio LSP dado que 
+  el programa funciona y es refactorizable.
 
 ## Pregunta 18
 - **Ten que aquí el enfoque clave estaba en el principio LSP, nada más. Podrías
   refactorizar fácilmente el código del cliente usando algún método estático. Por ejemplo realiza
   una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago
   y utilizar este método siempre que lo necesites.**
+  - RPTA:
 
 <!--# ISP-->
 # Principio de segregación de interfaz (ISP)
@@ -322,6 +329,7 @@ class EFax implements Fax {
 // codigo
 }
 ```
+- RPTA:
 
 ## Pregunta 20
 - **Para usar esta jerarquía de herencia, una vez que modificas el método sendFax() a
@@ -329,10 +337,12 @@ class EFax implements Fax {
   Impresora (sí, aquí también rompe el OCP).**
 - **Cuando actualices Impresora, también debes actualizar la clase impresoraBasica para
   adaptarse a este cambio. ¡Ahora ves el problema!. Explica el problema.**
+  - RPTA:
 
 ## Pregunta 21
 - **Si has entendido correctamente el problema. El ISP te sugiere que te ocupes de
   este tipo de escenario. Explica tu respuesta.**
+  - RPTA:
 
 ## Pregunta 22
 - **¿Es conveniente usar e inicializar el siguiente código?**
@@ -342,6 +352,8 @@ interface Impresora {
 	void sendFax();
 }
 ```
+- RPTA:
+
 ## Pregunta 23
 - **Si comienzas tu codificación considerando las impresoras avanzadas que pueden
   imprimir y enviar un fax, está bien. Pero en una etapa posterior, si tu programa también
@@ -354,6 +366,7 @@ interface Impresora {
 - **En este contexto, Cuando lanzas la excepción e intentas usar código polimórfico de manera
   incorrecta, ves el impacto de violar el LSP. Una vez que modificas Impresora, también viola el
   OCP.**
+  - RPTA:
 
 ## Pregunta 24
 - **Comprueba tus respuestas añadiendo dentro de main(), el siguiente código
@@ -366,6 +379,7 @@ impresora = new ImpresoraBasica();
 impresora.printDocument();
 //impresora .sendFax();
 ```
+
 #### Nota: Además, no puedes escribir algo como:
 ```java
 List<Impresora> impresoras = new ArrayList<Impresora>();
@@ -376,6 +390,8 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 }
 ```
 #### En ambos casos, verás excepciones de tiempo de ejecución.
+- RPTA:
+
 ## Pregunta 25
 
 ## Pregunta 26
