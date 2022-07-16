@@ -108,6 +108,14 @@ public class Cliente {
 
 ## Pregunta 4
 - **Realiza una demostración completa que sigue a SRP. Explica tus resultados**
+
+
+Notamos que los resultados obtenidos son similares a los resultados de No Solid. Se comprende que el método showEmpDetail() de la clase empleado no es necesario, pero hace que el codigo del cliente sea mas simple y facilmente comprensible.
+
+Ademas se debe tener en cuenta que SRP no dice que una clase deba tener como maximo un metodo. El enfasis esta en la responsabilidad única. Pueden haber métodos estrechamente relacionados que pueden ayudar a impletar dicha resposabilidad.
+
+Por ejemplo podemos colocar todos los métodos de visualización en una sola clase como se realiza en la clase cliente, la cual nos permite mostrar el nombre del empleado, los años de experiencia, el ID del empleado y si un empleado es Senior o Junior.
+
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta4.png">
 
 
