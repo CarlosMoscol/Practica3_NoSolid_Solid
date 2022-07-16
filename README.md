@@ -268,18 +268,25 @@ interface NewPayment {
 
   - NewPayment.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_1.png" alt="">
+  
   - PreviousPayment.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_2.png" alt="">
+  
   - PaymentHelper.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_3.png" alt="">
+  
   - RegisteredUserPayment.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_4.png" alt="">
+  
   - GuestUserPayment.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_5.png" alt="">
+  
   - Cliente.java:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_6.png" alt="">
+  
   - Lista de archivos:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_7.png" alt="">
+  
   - Ejecución:
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_8.png" alt="">
 
