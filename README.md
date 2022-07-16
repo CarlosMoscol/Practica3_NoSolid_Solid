@@ -163,34 +163,155 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 <!--# LSP-->
 # Principio de sustitución de Liskov (LSP)
 ## Pregunta 12
+- **Muestra la salida y explica los resultados en función de los métodos entregados**
 
 ## Pregunta 13
+- **Ahora supongamos que tienes un nuevo requisito que dice que necesitas admitir
+usuarios invitados en el futuro. Puedes procesar la solicitud de pago de un usuario invitado,
+pero no muestra su último detalle de pago. Entonces, crea la siguiente clase que implementa la
+interfaz de pago de la siguiente manera:**
+```java
+class GuestUserPayment implements Payment {
+	String name;
+	public GuestUserPayment() {
+		this.name = "guest";
+	}
+	@Override
+	public void previousPaymentInfo(){
+		throw new UnsupportedOperationException();
+	}
+	@Override
+	public void newPayment(){
+		System.out.println("Procesando de "+name+ "pago actual request.");
+	}
+}
+```
 
 ## Pregunta 14
+- **Dentro del método main(), utilizas una instancia de usuario invitado e intentas
+  usar su clase auxiliar de la misma manera,¿ qué tipo de excepción te encuentras?¿Cuál es la
+  solución?**
 
 ## Pregunta 15
+- **Todo lo anterior Lo más importante es que viola el OCP cada vez que modifica una
+  clase existente que usa esta cadena if-else. Entonces, busquemos una mejor solución.**
 
 ## Pregunta 16
+**En el próximo programa, eliminaremos el método newPayment() de la interfaz de
+  payment. Coloca este método en otra interfaz llamada NewPayment. Como resultado, ahora
+  tienes dos interfaces con las operaciones específicas. Dado que todos los tipos de usuarios
+  pueden generar una nueva solicitud de pago, las clases concretas de RegisteredUserPayment y
+  GuestUserPayment implementan la interfaz NewPayment.**
+
+**Pero muestra el último detalle de pago solo para los usuarios registrados. Entonces, la clase
+  RegisteredUser implementa la interfaz payment. Dado que Payment contiene el método
+  previousPaymentInfo(), tiene sentido elegir un nombre mejor, como PreviousPayment en lugar
+  de Payment. Entonces, ahora verá las siguientes interfaces:**
+
+```java
+interface PreviousPayment {
+	void previousPaymentInfo();
+}
+interface NewPayment {
+	void newPayment();
+}
+```
+**Ajuste estos nuevos nombres en la clase auxiliar también. En sección del código debes tener los siguientes archivos:**
+- PreviousPayment.java
+- NewPayment.java
+- RegisteredUserPayment.java
+- GuestUserPayment.java
+- PaymentHelper.java
+- Cliente.java
+
 
 ## Pregunta 17
+- **¿Cuáles son los cambios clave?**
 
+
+## Pregunta 18
+- **Ten que aquí el enfoque clave estaba en el principio LSP, nada más. Podrías
+  refactorizar fácilmente el código del cliente usando algún método estático. Por ejemplo realiza
+  una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago
+  y utilizar este método siempre que lo necesites.**
 
 <!--# ISP-->
 # Principio de segregación de interfaz (ISP)
-## Pregunta 18
-
 ## Pregunta 19
+- **¿Por qué un usuario necesita cambiar una clase base (o una interfaz)? Para
+  responder a esto, supongamos que deseas mostrar qué el tipo de fax está utilizando en una fase
+  de desarrollo posterior.**
+**Tu sabes que existen diferentes variaciones de métodos de fax, como LanFax, InternetFax (o
+  EFax) y AnalogFax. Entonces, antes, el método SendFax() no usaba ningún parámetro, pero
+  ahora necesita aceptar un parámetro para mostrar el tipo de fax que usa. Escribe una jerarquía
+  de fax que puede parecerse a la siguiente:**
+```java
+interface Fax {
+// codigo
+}
+class LanFax implements Fax {
+	@Override
+// codigo
+}
+class EFax implements Fax {
+	@Override
+// codigo
+}
+```
 
 ## Pregunta 20
+- **Para usar esta jerarquía de herencia, una vez que modificas el método sendFax() a
+  sendFax(Fax faxType) en la clase ImpresoraAvanzada, exige que cambies la interfaz de
+  Impresora (sí, aquí también rompe el OCP).**
+- **Cuando actualices Impresora, también debes actualizar la clase impresoraBasica para
+  adaptarse a este cambio. ¡Ahora ves el problema!. Explica el problema.**
 
 ## Pregunta 21
+- **Si has entendido correctamente el problema. El ISP te sugiere que te ocupes de
+  este tipo de escenario. Explica tu respuesta.**
 
 ## Pregunta 22
-
+- **¿Es conveniente usar e inicializar el siguiente código?**
+```java
+interface Impresora {
+	void printDocument();
+	void sendFax();
+}
+```
 ## Pregunta 23
+- **Si comienzas tu codificación considerando las impresoras avanzadas que pueden
+  imprimir y enviar un fax, está bien. Pero en una etapa posterior, si tu programa también
+  necesita admitir impresoras básicas,¿ qué código puedes escribir?**
+- **¡Ya has visto que este código puede causarte un problema potencial!**
+- **Está bastante claro que una impresora básica no necesita enviar un fax. Pero dado que
+  ImpresoraBasica implementa Impresora, debe proporcionar una implementación de sendFax().
+  Como resultado, cuando sendFax() cambia en la interfaz Impresora, ImpresoraBasica necesita
+  adaptarse al cambio. El ISP sugiere que evites este tipo de situaciones.**
+- **En este contexto, Cuando lanzas la excepción e intentas usar código polimórfico de manera
+  incorrecta, ves el impacto de violar el LSP. Una vez que modificas Impresora, también viola el
+  OCP.**
 
 ## Pregunta 24
-
+- **Comprueba tus respuestas añadiendo dentro de main(), el siguiente código
+  polimórfico:**
+```java
+Impresora impresora = new ImpresoraAvanzada();
+impresora.printDocument();
+impresora.sendFax();
+impresora = new ImpresoraBasica();
+impresora.printDocument();
+//impresora .sendFax();
+```
+#### Nota: Además, no puedes escribir algo como:
+```java
+List<Impresora> impresoras = new ArrayList<Impresora>();
+impresoras.add(new ImpresoraAvanzada());
+impresoras.add(new ImpresoraBasica());
+for (Impresora dispositivo : impresoras) { .printDocument();
+	// dispositivo.sendFax();
+}
+```
+#### En ambos casos, verás excepciones de tiempo de ejecución.
 ## Pregunta 25
 
 ## Pregunta 26
