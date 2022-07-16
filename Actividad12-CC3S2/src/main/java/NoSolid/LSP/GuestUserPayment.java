@@ -12,5 +12,6 @@ public class GuestUserPayment implements Payment{
         @Override
         public void newPayment(){
             System.out.println("Procesando de "+name+ "pago actual request.");
-        }}
+        }
+}
 

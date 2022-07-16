@@ -13,7 +13,7 @@
 	- El método checkSeniority() evalúa si un empleado es una persona mayor. Se establece que si el empleado tiene más de 5 años de experiencia, es un empleado senior; de lo contrario, es un empleado Junior.
 	Para el primer empleado es Senior y el segundo empleado es Junior.
 
-<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta1.png">
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta1.png" alt="">
 
 
 ## Pregunta 2
@@ -116,7 +116,7 @@ Ademas se debe tener en cuenta que SRP no dice que una clase deba tener como max
 
 Por ejemplo podemos colocar todos los métodos de visualización en una sola clase como se realiza en la clase cliente, la cual nos permite mostrar el nombre del empleado, los años de experiencia, el ID del empleado y si un empleado es Senior o Junior.
 
-<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta4.png">
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/SRP_Pregunta4.png" alt="">
 
 
 
@@ -180,7 +180,7 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
   una nueva orden de pago para cada uno, así como mostrar las órdenes de pago previas. Aparentemente, no ha habido un 
   error de compilación y ejecución.
   
-  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta12.png">
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta12.png" alt="">
 
 ## Pregunta 13
 - **Ahora supongamos que tienes un nuevo requisito que dice que necesitas admitir
@@ -203,6 +203,9 @@ class GuestUserPayment implements Payment {
 	}
 }
 ```
+  - Se agrega el codigo solicitado en el archivo GuestUserPayment.java:
+
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta13.png alt=""">
 
 ## Pregunta 14
 - **Dentro del método main(), utilizas una instancia de usuario invitado e intentas
