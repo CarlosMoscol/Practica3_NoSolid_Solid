@@ -164,6 +164,7 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 # Principio de sustitución de Liskov (LSP)
 ## Pregunta 12
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
+  - RPTA:
   - El archivo Payment.java tiene por función general simular interfaz de pago que puede hacer una nueva orden de pago 
   y el almacenar los pagos previos de un usuario teniendo los métodos:
     - El previousPaymentInfo() del archivo Payment.java tiene como función simular el almacenar los pagos previos
@@ -203,6 +204,7 @@ class GuestUserPayment implements Payment {
 	}
 }
 ```
+  - RPTA:
   - Se agrega el codigo solicitado en el archivo GuestUserPayment.java:
 
   <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta13.png" alt="">
@@ -211,11 +213,27 @@ class GuestUserPayment implements Payment {
 - **Dentro del método main(), utilizas una instancia de usuario invitado e intentas
   usar su clase auxiliar de la misma manera,¿qué tipo de excepción te encuentras?¿Cuál es la
   solución?**
+  - RPTA:
+  - La excepción que se muestra es UnsupportedOperationException la cual aparece para indicar que la operación 
+  solicitada no es compatible. Esto se debe a que el nuevo segmento de código GuestUserPayment no es compatible con 
+  la operación de showPreviousPayments() del archivo PaymentHelper.java aun si parece funcional (e implementa a Payment), 
+  en específico debido al loop for de showPreviousPayments(), en cada bucle este método llama al método 
+  previousPaymentInfo(), dicho método causa la excepción en GuestUserPayment, esto gracias a que en las líneas 9 a 11 de 
+  GuestUserPayment sobreescribe a previousPaymentInfo() haciendo que lance dicha excepción si es que se utiliza el 
+  método mencionado, dado que no hay una diferenciación entre un usuario registrado y un usuario invitado.
+
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta14.png" alt="">
+  
+  - La solución que inicialmente utilizaría sería hacer uso de un switch case o varios if-else para verificar cuando se
+  trate de un usuario o un invitado en función de una palabra clave para cada uno, sin embargo, gracias a lo aprendido 
+  en clases sobre el tema de principios SOLID nos damos cuenta de que al agregar cualquiera de los dos (Switch case o 
+  if-else) a la clase PaymentHelper se estaría violando el principio de abierto/cerrado (OCP) dado que se estaría 
+  modificando una clase para extender su comportamiento.
 
 ## Pregunta 15
 - **Todo lo anterior Lo más importante es que viola el OCP cada vez que modifica una
   clase existente que usa esta cadena if-else. Entonces, busquemos una mejor solución.**
-
+    - RPTA:
 ## Pregunta 16
 **En el próximo programa, eliminaremos el método newPayment() de la interfaz de
   payment. Coloca este método en otra interfaz llamada NewPayment. Como resultado, ahora
