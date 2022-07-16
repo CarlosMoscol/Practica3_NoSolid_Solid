@@ -13,8 +13,8 @@ public class Cliente {
         helper.addUser(pagoAbejita);
         helper.addUser(pagoChalito);
 
-        //GuestUserPayment guestUser = new GuestUserPayment();
-        //helper.addUser(guestUser);
+        GuestUserPayment guestUser = new GuestUserPayment();
+        helper.addUser(guestUser);
 
         // Procesando el pago usando la clase helper
         // Encuentras algun problema?

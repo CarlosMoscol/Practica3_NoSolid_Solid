@@ -164,6 +164,23 @@ Debes tener en cuenta que el método de evaluateDistinction(...) acepta un pará
 # Principio de sustitución de Liskov (LSP)
 ## Pregunta 12
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
+  - El archivo Payment.java tiene por función general simular interfaz de pago que puede hacer una nueva orden de pago 
+  y el almacenar los pagos previos de un usuario teniendo los métodos:
+    - El previousPaymentInfo() del archivo Payment.java tiene como función simular el almacenar los pagos previos
+    - El método newPayment() del archivo Payment.java tiene como función simular la nueva solicitud de pago de un usuario
+  - El archivo PaymentHelper.java tiene por función general ayudar a visualizar pagos anteriores y nuevas solicitudes 
+  esto mediante los métodos:
+    - El método addUser() del archivo PaymentHelper.java añade un usuario a la lista de órdenes de pagos (payments), 
+    para que pueda iniciar el proceso
+    - El método showPreviousPayments() del archivo PaymentHelper.java llama a previousPaymentInfo() para poder mostrar 
+    las órdenes de pago previas, haciendo uso de un bucle for para ello.
+    - El método processNewPayments() del archivo PaymentHelper.java llama a newPayment() para simular el generar el 
+    proceso de hacer una nueva orden de pago, haciendo uso de un bucle for para ello.
+  - Dentro del archivo cliente.java se crearon dos usuarios (con ayuda del método addUser()) y se solicita el realizar 
+  una nueva orden de pago para cada uno, así como mostrar las órdenes de pago previas. Aparentemente, no ha habido un 
+  error de compilación y ejecución.
+  
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta12.png">
 
 ## Pregunta 13
 - **Ahora supongamos que tienes un nuevo requisito que dice que necesitas admitir
@@ -189,7 +206,7 @@ class GuestUserPayment implements Payment {
 
 ## Pregunta 14
 - **Dentro del método main(), utilizas una instancia de usuario invitado e intentas
-  usar su clase auxiliar de la misma manera,¿ qué tipo de excepción te encuentras?¿Cuál es la
+  usar su clase auxiliar de la misma manera,¿qué tipo de excepción te encuentras?¿Cuál es la
   solución?**
 
 ## Pregunta 15
