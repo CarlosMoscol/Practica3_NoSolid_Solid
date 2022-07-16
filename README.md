@@ -305,6 +305,7 @@ interface NewPayment {
   una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago
   y utilizar este método siempre que lo necesites.**
   - RPTA:
+  - Para este código simplemente se trabajará sobre el archivo cliente añadiendo el método estático solicitado:
 
 <!--# ISP-->
 # Principio de segregación de interfaz (ISP)
@@ -330,6 +331,11 @@ class EFax implements Fax {
 }
 ```
 - RPTA:
+  - La jerarquía utilizada será la siguiente:
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta19.png" alt="">
+  - Mediante la interfaz Fax se crea de manera nativa el método faxType, el cual será sobreescrito según el tipo 
+  de envio de fax que se solicite. Los tipos (clases) serán LanFax en el que se sobreescribe faxtype() para mostrar un 
+  mensaje que mencione que se utiliza este tipo de envio, de forma similar para el tipo (clase) EFax.
 
 ## Pregunta 20
 - **Para usar esta jerarquía de herencia, una vez que modificas el método sendFax() a
