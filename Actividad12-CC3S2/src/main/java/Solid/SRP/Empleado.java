@@ -1,5 +1,5 @@
 package Solid.SRP;
-/*
+
 public class Empleado {
     public String firstName, lastName, empId;
     public double experienceInYears;
@@ -13,4 +13,3 @@ public class Empleado {
         System.out.println("Este empleado tiene "+ experienceInYears+" años de experiencia.");
     }
 }
-*/
