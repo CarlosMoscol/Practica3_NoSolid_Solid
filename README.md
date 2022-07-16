@@ -205,7 +205,7 @@ class GuestUserPayment implements Payment {
 ```
   - Se agrega el codigo solicitado en el archivo GuestUserPayment.java:
 
-  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta13.png alt=""">
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta13.png" alt="">
 
 ## Pregunta 14
 - **Dentro del método main(), utilizas una instancia de usuario invitado e intentas
