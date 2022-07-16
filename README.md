@@ -233,7 +233,9 @@ class GuestUserPayment implements Payment {
 ## Pregunta 15
 - **Todo lo anterior Lo más importante es que viola el OCP cada vez que modifica una
   clase existente que usa esta cadena if-else. Entonces, busquemos una mejor solución.**
-    - RPTA:
+  - RPTA:
+  - Una solución que busque respetar el código ya establecido en PaymentHelper sería trabajar con interfaces 
+  como se menciona en la siguiente pregunta.
 ## Pregunta 16
 **En el próximo programa, eliminaremos el método newPayment() de la interfaz de
   payment. Coloca este método en otra interfaz llamada NewPayment. Como resultado, ahora
@@ -261,7 +263,25 @@ interface NewPayment {
 - GuestUserPayment.java
 - PaymentHelper.java
 - Cliente.java
+  - RPTA:
+  - Cambios realizados a los archivos y archivos solicitados:
 
+  - NewPayment.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_1.png" alt="">
+  - PreviousPayment.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_2.png" alt="">
+  - PaymentHelper.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_3.png" alt="">
+  - RegisteredUserPayment.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_4.png" alt="">
+  - GuestUserPayment.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_5.png" alt="">
+  - Cliente.java:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_6.png" alt="">
+  - Lista de archivos:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_7.png" alt="">
+  - Ejecución:
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta16_8.png" alt="">
 
 ## Pregunta 17
 - **¿Cuáles son los cambios clave?**
