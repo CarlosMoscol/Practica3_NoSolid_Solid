@@ -655,12 +655,21 @@ for (Impresora dispositivo : impresoras) { .printDocument();
   - <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_code.png" alt="">
 ## Pregunta 28
 - **¿Qué sucede si usa un método predeterminado dentro de la interfaz?**
+- Recordemos que antes de Java 8, las interfaces no podían tener métodos predeterminados. Todos esos métodos eran abstractos.
+  por defecto.
+- Entonces, si se usa un método predeterminado dentro de la interfaz o una clase abstracta, cada vez que
+  agregamos un método en la clase interfaz, el método está disponible para su uso en las clases derivadas. Este tipo de
+  practicas pueden violar el OCP y el LSP, lo que a su vez provoca problemas difíciles de mantenimiento y reutilización.
 ## Pregunta 29
 - **¿Qué sucede si proporcionas un método de fax predeterminado en una interfaz?.
   Viste el problema potencial con esto!**
+- Si proporciona un método de fax predeterminado en una interfaz (o una clase abstracta), la impresora básica debe
+  anularlo.
 ## Pregunta 30
 - **¿Qué sucede si usa un método vacío, en lugar de lanzar la excepción?**
-
+- Sí, el código llegase a funcionar, el hecho de proporcionar un método vacío para una función que no es compatible en absoluto no es una buena solución en un caso como
+  este. Ya que es engañoso porque los clientes no ven cambios en la salida cuando invocan un
+  método válido.
 <!--# DIP-->
 # Principio de inversión de dependencia (DIP)
 ## Pregunta 31
