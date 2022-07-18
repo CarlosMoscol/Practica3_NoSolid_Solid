@@ -417,6 +417,12 @@ impresora = new ImpresoraBasica();
 impresora.printDocument();
 //impresora .sendFax();
 ```
+  - RPTA:
+  - Se adjunta imagen en la que se puede visualizar el cómo sucede el error esperado al hacer uso la excepción 
+mencionada en el código de la pregunta 23, esto prueba las respuestas expuestas anteriormente.
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta23.png" alt="">
+
+
 
 #### Nota: Además, no puedes escribir algo como:
 ```java

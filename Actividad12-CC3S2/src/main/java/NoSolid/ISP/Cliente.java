@@ -12,7 +12,7 @@ class Cliente {
 
         impresora = new ImpresoraBasica();
         impresora.printDocument();
-        //impresora.sendFax();// Lanza un error
+        impresora.sendFax();// Lanza un error
     }
 
 }
