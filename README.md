@@ -138,24 +138,44 @@ class Estudiante {
 	// … 
 } 
 ```
+A simple vista los métodos displayResult() y evaluteDisctinction() que se encuentran dentro de la clase Estudiante violan el principio de responsabilidad única porque estos métodos no se relacionan. El método displayResult() nos mostraría todos los detalle de un estudiante y el método evaluateDistinction() evalúa si un estudiante es elegible para otorgarle un certificado de distinción.
 
-
-
+Si se cambian los criterios de distinción. En este caso, tambien deberá cambiar el método de evaluateDistinction() .
 ## Pregunta 6
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
+
+En el siguiente programa, Estudiante y DistinctionDecider son dos clases diferentes.
+👋 La clase DistinctionDecider contiene el método EvaluationDistinction().
+
+👋 Para mostrar los detalles de un estudiante, puede anular el método toString(), en lugar de usar el método separado displayResult(). Entonces, dentro de la clase Estudiante, verás el método toString() ahora.
+
+👋 Dentro de main(), verá la siguiente línea: List<Estudiante> enrolledStudents = enrollStudents();
+
+👋 El método enrollStudents() crea una lista de estudiantes. Utilice esta lista para imprimir los detalles de los estudiantes uno por uno. También usa la misma lista antes de invocar evaluateDistinction() para identificar a los estudiantes que recibieron la distinción.
 
 <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/OCP_Pregunta6.png" alt="">
 
 ## Pregunta 7
 - **¿Cuál es el problema con este diseño y las razones posibles del problema?. Para abordar este problema, puedes escribir un mejor programa.**
 
+Si se cambian los criterios de distinción, no toca la clase Estudiante. Por lo tanto, esta parte está cerrada por modificación. Esto resuelve una parte del problema. Ahora pensando en la posibilidad de:
+Introducir una nueva rama como el comercio y establecer un nuevo criterio de distinción para esta rama.
+
+
+
 ## Pregunta 8
 - **Debes abordar el método de evaluación para la distinción de una mejor manera. Por lo tanto, crea la interfaz DistinctionDecider que contiene un método llamado EvaluationDistinction.**
 
+Se necesita hacer algunos cambios obvios nuevamente. Por ejemplo, debe modificar el método de evaluateDistinction() y agregar otra instrucción if para considerar a los estudiantes de comercio.
+
+Pero si se modifica el método, debe volver a probar todo el flujo de trabajo del código.
+Ahora el problema esta en que cada vez que cambia el criterio de distinción, debe modificar el método de evaluateDistinction() en la clase DistinctionDecider. Por lo tanto, esta clase no está cerrada para modificaciones.
 
 ## Pregunta 9
 - **Completa el código de ArtsDistinctionDecider y ScienceDistinctionDecider que implementan esta interfaz y sobreescriben el método de evaluateDistinction(...) para especificar los criterios de evaluación según sus necesidades. De esta forma, los criterios de distinción específicos de flujo se envuelven en una unidad independiente. 
 Debes tener en cuenta que el método de evaluateDistinction(...) acepta un parámetro Estudiante. Significa que ahora también puede pasar un objeto ArtsStudent o un objeto ScienceStudent a este método.**
+
+ArtsStudent y ScienceStudent son las clases concretas que amplían la clase Materia y se utilizan para proporcionar la información del "departamento" (en otras palabras, la materia cursada por un estudiante).
 
 ```java
 public class ArtsDistinctionDecider implements DistinctionDecider{
@@ -193,6 +213,11 @@ interface DistinctionDecider {
 ## Pregunta 11
 - **¿Cuáles son las principales ventajas ahora?**
 
+👋 La clase Estudiante y DistinctionDecider no se modifican para cualquier cambio futuro en los criterios de distinción. Están cerrados por modificación.
+
+👋 Cada participante sigue el SRP. Si se necesita considerar una nueva rama, digamos comercio. Luego puede crear una nueva clase como comercioEstudiante. Tenga en cuenta que, en un caso como este, no necesita tocar las clases ArtsStudent o ScienceStudent.
+
+👋 Algo similar sucede, cuando considera diferentes criterios de evaluación para un flujo diferente como el comercio, puede agregar una nueva clase derivada como CommerceDistinctionDecider que implementa la interfaz DistinctionDecider y puede establecer nuevos criterios de distinción para los estudiantes de comercio. En este caso, no necesita modificar ninguna clase existente en la jerarquía DistinctionDecider. Obviamente, el código del cliente necesita adoptar este cambio.
 <!--# LSP-->
 # Principio de sustitución de Liskov (LSP)
 ## Pregunta 12
