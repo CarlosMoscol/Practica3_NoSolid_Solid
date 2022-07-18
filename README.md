@@ -492,8 +492,14 @@ for (Impresora dispositivo : impresoras) { .printDocument();
     <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta31_2.png" alt="">
   - Cliente.java
     <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta31_3.png" alt="">
+- **En un inicio se crea una instancia del objeto OracleDatabase dentro del constructor UserInterface. Luego se usa este
+  objeto para invocar el método saveEmpIdInDatabase(), que realizará el guardado real dentro de la base de datos de Oracle.**
 ## Pregunta 32
 - **El programa es simple, pero ¿qué tipo de problemas presenta?**
+  - problemas:
+    - La clase UserInterface tiene demasiada dependencia de la clase de nivel inferior de la Base de datos Oracle. Estas dos clases están estrechamente unidas. 
+    - Entonces, en un futuro, si la clase OracleDatabase esta necesitará adecuar la clase UserInterface.
+    - No se tiene con claridad que sucede en caso se hiciera un cambio de base de datos de Oracle a MySQL por ejemplo.
 ## Pregunta 33
 - **En el programa de la carpeta SOLID, para el caso DIP verás la siguiente jerarquía:**
   - BaseDatos.java
