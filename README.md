@@ -139,8 +139,12 @@ class Estudiante {
 } 
 ```
 
+
+
 ## Pregunta 6
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
+
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/OCP_Pregunta6.png" alt="">
 
 ## Pregunta 7
 - **¿Cuál es el problema con este diseño y las razones posibles del problema?. Para abordar este problema, puedes escribir un mejor programa.**
@@ -152,10 +156,39 @@ class Estudiante {
 ## Pregunta 9
 - **Completa el código de ArtsDistinctionDecider y ScienceDistinctionDecider que implementan esta interfaz y sobreescriben el método de evaluateDistinction(...) para especificar los criterios de evaluación según sus necesidades. De esta forma, los criterios de distinción específicos de flujo se envuelven en una unidad independiente. 
 Debes tener en cuenta que el método de evaluateDistinction(...) acepta un parámetro Estudiante. Significa que ahora también puede pasar un objeto ArtsStudent o un objeto ScienceStudent a este método.**
+
+```java
+public class ArtsDistinctionDecider implements DistinctionDecider{
+
+  @Override
+  public void evaluateDistinction(Estudiante estudiante) {
+    if (estudiante.score > 70) {
+      System.out.println(estudiante.regNumber+" ha recibido una distinción en arte.");
+    }
+  }
+}
+```
+```java
+public class ScienceDistinctionDecider implements DistinctionDecider {
+
+  @Override
+  public void evaluateDistinction(Estudiante estudiante) {
+    if (estudiante.score > 80) {
+      System.out.println(estudiante.regNumber+" ha recibido una distinción en ciencias.");
+    }
+  }
+}
+```
+```java
+interface DistinctionDecider {
+  void evaluateDistinction(Estudiante estudiante);
+}
+```
  
 ## Pregunta 10
 - **Realiza una demostración completa que sigue a OCP. Explica tus resultados**
 
+<img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/OCP_Pregunta10.png" alt="">
 
 ## Pregunta 11
 - **¿Cuáles son las principales ventajas ahora?**
