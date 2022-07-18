@@ -1,5 +1,5 @@
 package Solid.OCP;
-/*
+
 abstract class Estudiante {
     String name;
     String regNumber;
@@ -18,4 +18,3 @@ abstract class Estudiante {
     }
 
 }
-*/
