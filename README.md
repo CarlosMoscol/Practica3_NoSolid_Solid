@@ -363,7 +363,18 @@ interface NewPayment {
   una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago
   y utilizar este método siempre que lo necesites.**
   - RPTA:
-  - Para este código simplemente se trabajará sobre el archivo cliente añadiendo el método estático solicitado:
+  - Para este código simplemente se trabajará sobre el archivo cliente añadiendo el método estático solicitado, el cual 
+  se nombró como AllSolicitud(PaymentHelper helper):
+  ```java
+  public static void AllSolicitud (PaymentHelper helper){
+    PaymentHelper hStatic=helper;
+    hStatic.showPreviousPayments();
+    hStatic.processNewPayments();
+  }
+  ```
+  - Prueba de que el método estático funciona de la misma manera que las pruebas iniciales:
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta18.png" alt="">
+
 
 <!--# ISP-->
 # Principio de segregación de interfaz (ISP)
@@ -588,6 +599,7 @@ for (Impresora dispositivo : impresoras) { .printDocument();
     <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_4.png" alt="">
 - **Explica los resultados.¿ El programa resuelve todos los posibles problemas del programa que
   no usa DIP.**
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_code_finish.png" alt="">
   - Por lo mostrado anteriormente se puede ver que el programa resuelve todos los posibles problemas presentados.
 - **En resumen, en OOP, te sugiero seguir la cita de Robert C. Martin:**
   - Los módulos de alto nivel simplemente no deberían depender de los módulos de bajo nivel de
