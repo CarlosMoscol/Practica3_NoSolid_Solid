@@ -5,6 +5,5 @@ public class ArteEstudiante extends Estudiante{
         super(name, regNumber, score);
         this.department = dept;
     }
-
 }
 

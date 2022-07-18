@@ -204,7 +204,101 @@ interface DistinctionDecider {
   void evaluateDistinction(Estudiante estudiante);
 }
 ```
- 
+
+```java
+public class ArteEstudiante extends Estudiante{
+  public ArteEstudiante(String name, String regNumber, double score,String dept) {
+    super(name, regNumber, score);
+    this.department = dept;
+  }
+}
+```
+```java
+public class CienciaEstudiante extends Estudiante{
+  public CienciaEstudiante(String name, String regNumber, double score,String dept) {
+    super(name, regNumber, score);
+    this.department = dept;
+  }
+}
+```
+
+```java
+abstract class Estudiante {
+  String name;
+  String regNumber;
+  double score;
+  String department;
+
+  public Estudiante(String name, String regNumber, double score) {
+    this.name = name;
+    this.regNumber = regNumber;
+    this.score = score;
+  }
+
+  public String toString() {
+    return ("Nombre: " + name + "\nNumero Reg: " + regNumber + "\nDept:" + department + "\nMarks:"
+            + score + "\n");
+  }
+
+}
+```
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+public class Cliente {
+  public static void main(String[] args) {
+    System.out.println("Demostracion OCP");
+    List<Estudiante> CienciasEstudiantes = enrollScienceStudents();
+    List<Estudiante> ArtesEstudiantes = enrollArtsStudents();
+
+    // Muestra todos los resultados.
+    System.out.println("Resultados:");
+
+    for (Estudiante estudiante : CienciasEstudiantes) {
+      System.out.println(estudiante);
+    }
+    for (Estudiante estudiante : ArtesEstudiantes) {
+      System.out.println(estudiante);
+    }
+
+    // Evalua las distinciones
+
+    DistinctionDecider scienceDistinctionDecider = new ScienceDistinctionDecider();
+    DistinctionDecider artsDistinctionDecider = new ArtsDistinctionDecider();
+    System.out.println("Distinciones:");
+    for (Estudiante estudiante : CienciasEstudiantes) {
+      scienceDistinctionDecider.evaluateDistinction(estudiante);
+    }
+    for (Estudiante estudiante : ArtesEstudiantes) {
+      artsDistinctionDecider.evaluateDistinction(estudiante);
+    }
+
+  }
+
+  private static List<Estudiante> enrollScienceStudents() {
+    Estudiante Irene = new CienciaEstudiante("Irene", "R1", 81.5,"Ciencia de la computacion.");
+    Estudiante jessica = new CienciaEstudiante("Jessica", "R2", 72,"Fisica");
+    List<Estudiante> CienciasEstudiantes = new ArrayList<Estudiante>();
+    CienciasEstudiantes.add(Irene);
+    CienciasEstudiantes.add(jessica);
+    return CienciasEstudiantes;
+  }
+
+  private static List<Estudiante> enrollArtsStudents() {
+    Estudiante chalo = new ArteEstudiante("Chalo", "R3", 71,"Historia");
+    Estudiante claudio = new ArteEstudiante("Claudio", "R4", 66.5,"Literatura");
+    List<Estudiante> ArtesEstudiantes = new ArrayList<Estudiante>();
+    ArtesEstudiantes.add(chalo);
+    ArtesEstudiantes.add(claudio);
+    return ArtesEstudiantes;
+  }
+
+
+}
+```
+
+
 ## Pregunta 10
 - **Realiza una demostración completa que sigue a OCP. Explica tus resultados**
 
