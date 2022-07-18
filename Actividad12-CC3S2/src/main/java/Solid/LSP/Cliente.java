@@ -20,13 +20,21 @@ public class Cliente {
         helper.addNewPayment(irene);
         helper.addNewPayment(claudio);
         helper.addNewPayment(guestUser1);
-
+        /*
         // Recupera todos los pagos anteriores de los usuarios registrados
         helper.showPreviousPayments();
 
         // Procesa todas las solicitudes de pago nuevos de todos los usuarios
         helper.processNewPayments();
+         */
+        AllSolicitud(helper);//basta con ingresar el nombre del helper utilizado e imprime TODAS las ordenes de pago tanto previas como nuevas
+    }
 
+    public static void AllSolicitud (PaymentHelper helper){
+        PaymentHelper hStatic=helper;
+        hStatic.showPreviousPayments();
+        hStatic.processNewPayments();
 
     }
+
 }
