@@ -392,7 +392,7 @@ interface Impresora {
   - El código que se puede escribir contendría una excepción para que no haga uso del envio de fax (que no es 
   necesario para una impresora basica), sin embargo, como se vio en la sección de LSP (NoSolid) esto causaría un 
   conflicto similar
-  - El código a utilizar sería el siguiente:
+  - El código que se podría utilizar sería el siguiente:
   ```java
   class ImpresoraBasica implements Impresora {
     @Override
