@@ -530,6 +530,7 @@ for (Impresora dispositivo : impresoras) { .printDocument();
     <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_4.png" alt="">
 - **Explica los resultados.¿ El programa resuelve todos los posibles problemas del programa que
   no usa DIP.**
+  - Por lo mostrado anteriormente se puede ver que el programa resuelve todos los posibles problemas presentados.
 - **En resumen, en OOP, te sugiero seguir la cita de Robert C. Martin:**
   - Los módulos de alto nivel simplemente no deberían depender de los módulos de bajo nivel de
     ninguna manera.
@@ -537,7 +538,12 @@ for (Impresora dispositivo : impresoras) { .printDocument();
   ninguna de sus clases derivadas.**
 ## Pregunta 35
 - **Encuentra alguna excepción a esta sugerencia.**
+- Un ejemplo sería cuando la clase de base necesita restringir el recuento de instancias de clases derivadas en un punto determinado.
+- Otro ejemplo es cuando el constructor de la clase UserInterface acepta un  parámetro de la base de datos. Este puede proporcionar una facilidad adicional a un usuario cuando usa tanto el constructor como el
+  método setter (setDatabase) dentro de esta clase.
 ## Pregunta 36
 - **El constructor de la clase InterfazUsuario acepta un parámetro de base de datos.
   Proporciona una instalación adicional a un usuario cuando utiliza tanto el constructor como el
   método setter (setDatabase) dentro de esta clase. ¿Cuál es el beneficio?.**
+  - Ahora podemos crear instancias de una base de datos mientras se crea instancias de la clase UserInterface y
+    podemos cambiar la base de datos usando el metodo setter.
