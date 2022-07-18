@@ -609,13 +609,19 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 ```
 - **con una expresión lambda adecuada. Tú eliges cuál quieres usar.**
 - **Sean los siguientes archivos:**
-  - Impresora.java 
-  - ImpresoraBasica.java 
-  - ImpresoraAvanzada.java 
-  - Cliente.java 
+  - Impresora.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta25_1.png" alt="">
+  - ImpresoraBasica.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta25_2.png" alt="">
+  - ImpresoraAvanzada.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta25_3.png" alt="">
+  - Cliente.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta25_4.png" alt="">
   - JerarquiaFax.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta25_5.png" alt="">
 ## Pregunta 26
 - **Muestra la salida y explica los resultados en función de los métodos entregados.**
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta26.png" alt="">
 ## Pregunta 27
 - **Supongamos que necesitas admitir otra impresora que pueda imprimir, enviar
   faxes y fotocopiar. En este caso, si agregas un método de fotocopiado en la interfaz Impresora,
@@ -632,11 +638,16 @@ for (Impresora dispositivo : impresoras) { .printDocument();
   ellos. Es por eso que ves las interfaces segregadas con un solo método.**
 - **Para terminar esta pregunta, en la sección de SOLID del código entregado, completa los
   siguientes archivos. No olvides explicar tus resultados.**
-  - Impresora.java 
-  - DispositivoFax.java 
-  - ImpresoraBasica.java 
-  - ImpresoraAvanzada.java 
+  - Impresora.java
+    <img src="" alt="">
+  - DispositivoFax.java
+    <img src="" alt="">
+  - ImpresoraBasica.java
+    <img src="" alt="">
+  - ImpresoraAvanzada.java
+    <img src="" alt="">
   - Cliente.java
+    <img src="" alt="">
 ## Pregunta 28
 - **¿Qué sucede si usa un método predeterminado dentro de la interfaz?**
 ## Pregunta 29
