@@ -6,19 +6,19 @@ public class Cliente {
         System.out.println("Demostracion con DIP");
 
         // Usando Oracle
-        Database database = new OracleDatabase();
-        UserInterface userInterface = new UserInterface(database);
-        userInterface.saveEmployeeId("E001");
+        BaseDatos database = new OracleDatabase();
+        InterfazUsuario usuario = new InterfazUsuario(database);
+        usuario.saveEmployeeId("E001");
 
         // Usando Mysql
         database = new MySQLDatabase();
-        userInterface = new UserInterface(database);
-        userInterface.saveEmployeeId("E002");
+        usuario = new InterfazUsuario(database);
+        usuario.saveEmployeeId("E002");
 
         // Cambiando la base de datos objetivo
         //usuario = new InterfazUsuario(new OracleDatabase());
-        userInterface.setDatabase(new OracleDatabase());
-        userInterface.saveEmployeeId("E002");
+        usuario.setDatabase(new OracleDatabase());
+        usuario.saveEmployeeId("E002");
 
 
     }

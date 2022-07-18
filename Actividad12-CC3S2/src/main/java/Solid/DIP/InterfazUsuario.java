@@ -1,7 +1,17 @@
 package Solid.DIP;
 class InterfazUsuario {
-    @Override
-    public void saveEmpIdInDatabase(String empId) {
-        System.out.println("The id: " + empId + " is saved in the MySQL database.");
+
+    BaseDatos database;
+
+    public InterfazUsuario(BaseDatos database) {
+        this.database = database;
+    }
+
+    public void setDatabase(BaseDatos database) {
+        this.database = database;
+    }
+
+    public void saveEmployeeId(String empId) {
+        database.saveEmpIdInDatabase(empId);
     }
 }
