@@ -622,6 +622,9 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 ## Pregunta 26
 - **Muestra la salida y explica los resultados en función de los métodos entregados.**
   <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta26.png" alt="">
+- Nos percatamos para evitar las excepciones de tiempo de ejecución, era necesario comentar una línea de código. (impresora.sendFax();// Lanza un error)
+- Es importante tener en cuenta, como ya antes se mencionó en este diseño, si cambia la firma del método sendFax() en
+  AdvancedPrinter, debemos ajustar el cambio en Printer, lo que hace que BasicPrinter se cambie y recompile.
 ## Pregunta 27
 - **Supongamos que necesitas admitir otra impresora que pueda imprimir, enviar
   faxes y fotocopiar. En este caso, si agregas un método de fotocopiado en la interfaz Impresora,
@@ -639,15 +642,17 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 - **Para terminar esta pregunta, en la sección de SOLID del código entregado, completa los
   siguientes archivos. No olvides explicar tus resultados.**
   - Impresora.java
-    <img src="" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta27_1.png" alt="">
   - DispositivoFax.java
-    <img src="" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta27_2.png" alt="">
   - ImpresoraBasica.java
-    <img src="" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta27_3.png" alt="">
   - ImpresoraAvanzada.java
-    <img src="" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta27_4.png" alt="">
   - Cliente.java
-    <img src="" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta27_5.png" alt="">
+  - Producto final
+  - <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_code.png" alt="">
 ## Pregunta 28
 - **¿Qué sucede si usa un método predeterminado dentro de la interfaz?**
 ## Pregunta 29
