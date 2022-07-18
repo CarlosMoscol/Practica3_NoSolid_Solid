@@ -399,29 +399,92 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 - RPTA:
 
 ## Pregunta 25
-
+- **Reemplaza el segmento de código**
+```java
+for (Impresora dispositivo : impresoras) { .printDocument();
+// dispositivo.sendFax();
+        }
+```
+- **con una expresión lambda adecuada. Tú eliges cuál quieres usar.**
+- **Sean los siguientes archivos:**
+  - Impresora.java 
+  - ImpresoraBasica.java 
+  - ImpresoraAvanzada.java 
+  - Cliente.java 
+  - JerarquiaFax.java
 ## Pregunta 26
-
+- **Muestra la salida y explica los resultados en función de los métodos entregados.**
 ## Pregunta 27
-
+- **Supongamos que necesitas admitir otra impresora que pueda imprimir, enviar
+  faxes y fotocopiar. En este caso, si agregas un método de fotocopiado en la interfaz Impresora,
+  los dos clientes existentes, ImpresoraBasica y ImpresoraAvanzada, deben adaptarse al cambio.**
+- **Busquemos una mejor solución.**
+- **Hay dos actividades diferentes: una es imprimir unos documentos y la otra es enviar un fax.
+  Crea dos interfaces llamada Impresora y DispositivoFax. Impresora contiene el método
+  printDocument() y DispositivoFax contiene el método SendFax(). La idea es sencilla:**
+  - La clase que desea la función de impresión implementa la interfaz Impresora y la clase
+    que desea la función de fax implementa la interfaz DispositivoFax.
+  - Si una clase quiere ambas funcionalidades, implementa ambas interfaces.
+- **No debes asumir que el ISP dice que una interfaz debe tener solo un método. En este ejemplo
+  hay dos métodos en la interfaz de Impresora y la clase ImpresoraBasica necesita solo uno de
+  ellos. Es por eso que ves las interfaces segregadas con un solo método.**
+- **Para terminar esta pregunta, en la sección de SOLID del código entregado, completa los
+  siguientes archivos. No olvides explicar tus resultados.**
+  - Impresora.java 
+  - DispositivoFax.java 
+  - ImpresoraBasica.java 
+  - ImpresoraAvanzada.java 
+  - Cliente.java
 ## Pregunta 28
-
+- **¿Qué sucede si usa un método predeterminado dentro de la interfaz?**
 ## Pregunta 29
-
+- **¿Qué sucede si proporcionas un método de fax predeterminado en una interfaz?.
+  Viste el problema potencial con esto!**
 ## Pregunta 30
-
+- **¿Qué sucede si usa un método vacío, en lugar de lanzar la excepción?**
 
 <!--# DIP-->
 # Principio de inversión de dependencia (DIP)
 ## Pregunta 31
-
+- **Muestra la salida y explica los resultados en función de los métodos entregados**
+  - InterfaceUsuario.java 
+  - OracleDataBase.java 
+  - Cliente.java
 ## Pregunta 32
-
+- **El programa es simple, pero ¿qué tipo de problemas presenta?**
 ## Pregunta 33
-
+- **En el programa de la carpeta SOLID, para el caso DIP verás la siguiente jerarquía:**
+  - BaseDatos.java
+  - OracleDatabase.java
+- **La primera parte del DIP sugiere que nos centramos en la abstracción. Esto hace que el
+  programa sea eficiente. Entonces, esta vez la clase InterfazUsuario tiene como objetivo la base
+  de datos de abstracción, en lugar de una implementación concreta como OracleDatabase.**
+- **Implementa la clase InterfazUsuario.**
+- **Esto brinda la flexibilidad de considerar una nueva base de datos, como MYSQLDatabase
+  también.**
+- **La segunda parte del DIP sugiere hacer la interfaz de la base de datos considerando la
+  necesidad de la clase InterfazUsuario.**
+- **Es importante porque si una interfaz necesita cambiar para admitir a uno de sus clientes, otros
+  clientes pueden verse afectados por el cambio.**
+  - Es importante porque si una interfaz necesita cambiar para admitir a uno de sus clientes, otros
+    clientes pueden verse afectados por el cambio.
 ## Pregunta 34
-
+- **Completa todos los archivos siguientes de la sección SOLID**
+  - InterfazUsuario.java
+  - BaseDatos.java 
+  - OracleDataBase.java 
+  - MySQLDatabase.java 
+  - Cliente.java
+- **Explica los resultados.¿ El programa resuelve todos los posibles problemas del programa que
+  no usa DIP.**
+- **En resumen, en OOP, te sugiero seguir la cita de Robert C. Martin:**
+  - Los módulos de alto nivel simplemente no deberían depender de los módulos de bajo nivel de
+    ninguna manera.
+- **Entonces, cuando tienes una clase base y una clase derivada, tu clase base no debe conocer
+  ninguna de sus clases derivadas.**
 ## Pregunta 35
-
+- **Encuentra alguna excepción a esta sugerencia.**
 ## Pregunta 36
-
+- **El constructor de la clase InterfazUsuario acepta un parámetro de base de datos.
+  Proporciona una instalación adicional a un usuario cuando utiliza tanto el constructor como el
+  método setter (setDatabase) dentro de esta clase. ¿Cuál es el beneficio?.**
