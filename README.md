@@ -447,9 +447,12 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 # Principio de inversión de dependencia (DIP)
 ## Pregunta 31
 - **Muestra la salida y explica los resultados en función de los métodos entregados**
-  - InterfaceUsuario.java 
-  - OracleDataBase.java 
+  - InterfaceUsuario.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta31_1.png" alt="">
+  - OracleDataBase.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta31_2.png" alt="">
   - Cliente.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta31_3.png" alt="">
 ## Pregunta 32
 - **El programa es simple, pero ¿qué tipo de problemas presenta?**
 ## Pregunta 33
@@ -460,6 +463,7 @@ for (Impresora dispositivo : impresoras) { .printDocument();
   programa sea eficiente. Entonces, esta vez la clase InterfazUsuario tiene como objetivo la base
   de datos de abstracción, en lugar de una implementación concreta como OracleDatabase.**
 - **Implementa la clase InterfazUsuario.**
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta33.png" alt="">
 - **Esto brinda la flexibilidad de considerar una nueva base de datos, como MYSQLDatabase
   también.**
 - **La segunda parte del DIP sugiere hacer la interfaz de la base de datos considerando la
@@ -471,10 +475,14 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 ## Pregunta 34
 - **Completa todos los archivos siguientes de la sección SOLID**
   - InterfazUsuario.java
-  - BaseDatos.java 
-  - OracleDataBase.java 
-  - MySQLDatabase.java 
+  - BaseDatos.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_1.png" alt="">
+  - OracleDataBase.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_2.png" alt="">
+  - MySQLDatabase.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_3.png" alt="">
   - Cliente.java
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/DIP_Pregunta34_4.png" alt="">
 - **Explica los resultados.¿ El programa resuelve todos los posibles problemas del programa que
   no usa DIP.**
 - **En resumen, en OOP, te sugiero seguir la cita de Robert C. Martin:**
