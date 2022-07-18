@@ -338,7 +338,18 @@ interface NewPayment {
   una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago
   y utilizar este método siempre que lo necesites.**
   - RPTA:
-  - Para este código simplemente se trabajará sobre el archivo cliente añadiendo el método estático solicitado:
+  - Para este código simplemente se trabajará sobre el archivo cliente añadiendo el método estático solicitado, el cual 
+  se nombró como AllSolicitud(PaymentHelper helper):
+  ```java
+  public static void AllSolicitud (PaymentHelper helper){
+    PaymentHelper hStatic=helper;
+    hStatic.showPreviousPayments();
+    hStatic.processNewPayments();
+  }
+  ```
+  - Prueba de que el método estático funciona de la misma manera que las pruebas iniciales:
+  <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta18.png" alt="">
+
 
 <!--# ISP-->
 # Principio de segregación de interfaz (ISP)
