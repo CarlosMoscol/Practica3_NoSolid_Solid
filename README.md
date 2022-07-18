@@ -332,7 +332,7 @@ class EFax implements Fax {
 ```
 - RPTA:
   - La jerarquía utilizada será la siguiente:
-    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/LSP_Pregunta19.png" alt="">
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta19.png" alt="">
   - Mediante la interfaz Fax se crea de manera nativa el método faxType, el cual será sobreescrito según el tipo 
   de envio de fax que se solicite. Los tipos (clases) serán LanFax en el que se sobreescribe faxtype() para mostrar un 
   mensaje que mencione que se utiliza este tipo de envio, de forma similar para el tipo (clase) EFax.
@@ -344,11 +344,23 @@ class EFax implements Fax {
 - **Cuando actualices Impresora, también debes actualizar la clase impresoraBasica para
   adaptarse a este cambio. ¡Ahora ves el problema!. Explica el problema.**
   - RPTA:
+  - El problema radica en el hecho de que al hacer el cambio en la clase ImpresoraAvanzada dicho cambio solicita que 
+  agregue se agregue el método sendFax() a la interfaz Impresora, dicho método no es necesario para la clase 
+  impresoraBasica por lo que esto "engrosa" la interfaz Impresora con métodos que no son relevantes para todas las 
+  clases que la implementan. Es aquí donde el ISP entra a actuar, segregando los métodos que engrosan a lña interfaz 
+  de tal manera que sean implementados solo los métodos necesarios a las clases que los requieran. 
+  (Se adjunta foto del cómo el propio IDE solicitaría que se agregue el método mencionado a la interfaz Impresora)
+    <img src="https://github.com/CarlosMoscol/Practica3_NoSolid_Solid/blob/master/PruebasImagenes/ISP_Pregunta20.png" alt="">
 
 ## Pregunta 21
 - **Si has entendido correctamente el problema. El ISP te sugiere que te ocupes de
   este tipo de escenario. Explica tu respuesta.**
   - RPTA:
+  - Tal y como se mencionó en la respuesta anterior el uso del ISP es debido a que el engrosamiento de la interfaz 
+  más adelante podría generar conflictos en caso se necesitaran agregar otros tipos de impresoras que no requieran de 
+  todos los métodos utilizados en la interfaz. La segregación de interfaces permite distribuir los métodos que se 
+  usarían en la interfaz principal permitiendo una mayor flexibilidad de añadir nuevas clases, minimizando la 
+  posibilidad de errores, sdin la necesidad de romper el OCP.
 
 ## Pregunta 22
 - **¿Es conveniente usar e inicializar el siguiente código?**
@@ -358,7 +370,11 @@ interface Impresora {
 	void sendFax();
 }
 ```
-- RPTA:
+  - RPTA:
+  - Como respuesta corta, No; Explicación: esto debido a que dicha interfaz si bien permite facilmente agregar una clase 
+  ImpresoraAvanzada en caso se necesite agregar un tipo de impresora que no utilice todos los métodos habría un 
+  conflicto y al añadir una excepción para dicho nuevo tipo de impresora puede llegar a causar un conflicto con las 
+  demás clases o incluso con la interfaz misma (como fue visto en un caso anterior NoSolid del LSP)
 
 ## Pregunta 23
 - **Si comienzas tu codificación considerando las impresoras avanzadas que pueden
@@ -373,7 +389,23 @@ interface Impresora {
   incorrecta, ves el impacto de violar el LSP. Una vez que modificas Impresora, también viola el
   OCP.**
   - RPTA:
-
+  - El código que se puede escribir contendría una excepción para que no haga uso del envio de fax (que no es 
+  necesario para una impresora basica), sin embargo, como se vio en la sección de LSP (NoSolid) esto causaría un 
+  conflicto similar
+  - El código a utilizar sería el siguiente:
+  ```java
+  class ImpresoraBasica implements Impresora {
+    @Override
+    public void printDocument() {
+      System.out.println("La impresora basica imprime un documento.");
+    }
+  
+    @Override
+    public void sendFax() {
+      throw new UnsupportedOperationException();
+    }
+  }
+  ```
 ## Pregunta 24
 - **Comprueba tus respuestas añadiendo dentro de main(), el siguiente código
   polimórfico:**
@@ -396,7 +428,8 @@ for (Impresora dispositivo : impresoras) { .printDocument();
 }
 ```
 #### En ambos casos, verás excepciones de tiempo de ejecución.
-- RPTA:
+  - RPTA:
+
 
 ## Pregunta 25
 - **Reemplaza el segmento de código**
